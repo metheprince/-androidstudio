@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AI Call Attender"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <Switch
+        android:id="@+id/serviceToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:minHeight="48dp"
+        android:text="Enable Call Attender"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Response Mode:"/>
+
+    <RadioGroup
+        android:id="@+id/responseModeGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/predefinedMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:minHeight="48dp"
+            android:text="Predefined Message" />
+
+        <RadioButton
+            android:id="@+id/aiMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="AI Response" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/predefinedMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Enter predefined message"
+        android:minHeight="48dp"
+        android:visibility="visible"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Answer Delay (seconds):"/>
+
+    <SeekBar
+        android:id="@+id/delaySeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="30"
+        android:progress="15"/>
+
+    <TextView
+        android:id="@+id/delayValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15 seconds"/>
+
+    <Button
+        android:id="@+id/saveSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Save Settings"
+        tools:ignore="VisualLintButtonSize" />
+
+    <Button
+        android:id="@+id/viewCallLogs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="View Call Logs"
+        tools:ignore="VisualLintButtonSize" />
+</LinearLayout>

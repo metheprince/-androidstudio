@@ -1,0 +1,64 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+
+
+android {
+    namespace 'com.ai.callattender'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.ai.callattender"
+        minSdk 21
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+dependencies {
+    implementation libs.material.v161
+    implementation libs.constraintlayout.v214
+    implementation libs.okhttp // For API calls
+    implementation libs.gson // For JSON parsing
+    implementation libs.firebase.ml.vision // For text recognition
+    implementation libs.twilio // For call handling
+    implementation libs.appcompat
+    implementation libs.activity
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+    implementation libs.play.services.vision
+    implementation libs.play.services.vision.common
+
+    // Room components
+    implementation libs.room.runtime
+    annotationProcessor libs.room.compiler
+
+    // Lifecycle components
+    implementation libs.lifecycle.extensions
+    annotationProcessor libs.lifecycle.compiler
+
+}

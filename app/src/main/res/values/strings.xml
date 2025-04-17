@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AI Call Attender</string>
+    <string name="call_logs">Call Logs</string>
+    <string name="call_attender">AI Call Attender</string>
+</resources>
