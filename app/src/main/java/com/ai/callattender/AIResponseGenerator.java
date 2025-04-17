@@ -17,7 +17,7 @@ import okhttp3.Response;
 
 public class AIResponseGenerator {
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
-    private static final String API_KEY = "\n" + "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"; // Replace with your actual API key
+    private static final String API_KEY = "\n" + " "; // Replace with your actual API key
     private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
     private Context context;
